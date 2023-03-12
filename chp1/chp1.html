@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 1</title>
+    <script src="../util/util.js"></script>
+    <script src="chp1.js"></script>
+  </head>
+  <body>
+    <h1>Refactoring: Chapter 1</h1>
+    <p id="dateTime"></p>
+    <p><a href="../index.html">Back</a></p>
+
+    <p id="statement"></p>
+
+    <script>
+      window.addEventListener("load", (event) => {
+        setDateTime("dateTime");
+        setEleValue("statement", getStatement());
+      });
+    </script>
+  </body>
+</html>
