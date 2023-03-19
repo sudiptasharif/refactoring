@@ -75,8 +75,8 @@ function amountFor(aPerformance, aPlay) {
   return result;
 }
 
-function getPlay(aPerformance, jPlays) {
-  return jPlays[aPerformance.playID];
+function getPlay(aPerformance, thePlays) {
+  return thePlays[aPerformance.playID];
 }
 
 function volumeCreditsFor(aPerformance, jPlays) {
