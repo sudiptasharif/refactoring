@@ -79,10 +79,10 @@ function getPlay(aPerformance, thePlays) {
   return thePlays[aPerformance.playID];
 }
 
-function volumeCreditsFor(aPerformance, jPlays) {
+function volumeCreditsFor(aPerformance, thePlays) {
   let result = 0;
   result += Math.max(aPerformance.audience - 30, 0);
-  if ("comedy" === getPlay(aPerformance, jPlays).type) {
+  if ("comedy" === getPlay(aPerformance, thePlays).type) {
     result += Math.floor(aPerformance.audience / 5);
   }
   return result;
