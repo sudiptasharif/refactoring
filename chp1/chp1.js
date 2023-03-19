@@ -80,12 +80,12 @@ function getPlay(aPerformance, oPlays) {
 }
 
 function volumeCreditsFor(aPerformance, oPlays) {
-  let volumeCredits = 0;
-  volumeCredits += Math.max(aPerformance.audience - 30, 0);
+  let result = 0;
+  result += Math.max(aPerformance.audience - 30, 0);
   if ("comedy" === getPlay(aPerformance, oPlays).type) {
-    volumeCredits += Math.floor(aPerformance.audience / 5);
+    result += Math.floor(aPerformance.audience / 5);
   }
-  return volumeCredits;
+  return result;
 }
 
 console.log(statement(invoices[0], plays));
