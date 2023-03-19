@@ -35,16 +35,16 @@ function statement(invoice, plays) {
   }).format;
 
   for (let perf of invoice.performances) {
-    const play = plays[perf.playID];
-    let thisAmount = amountFor(perf, play);
+    let thisAmount = amountFor(perf, getPlay(perf, plays));
 
     // add volume credits
     volumeCredits += Math.max(perf.audience - 30, 0);
     // add extra credit for every ten comedy attendees
-    if ("comedy" === play.type) volumeCredits += Math.floor(perf.audience / 5);
+    if ("comedy" === getPlay(perf, plays).type)
+      volumeCredits += Math.floor(perf.audience / 5);
 
     // print line for this order
-    result += `  ${play.name}: ${format(thisAmount / 100)} (${
+    result += `  ${getPlay(perf, plays).name}: ${format(thisAmount / 100)} (${
       perf.audience
     } seats)\n`;
     totalAmount += thisAmount;
@@ -78,6 +78,10 @@ function amountFor(aPerformance, play) {
       throw new Error(`unknown type: ${play.type}`);
   }
   return result;
+}
+
+function getPlay(aPerformance, oPlays) {
+  return oPlays[aPerformance.playID];
 }
 
 console.log(statement(invoices[0], plays));
