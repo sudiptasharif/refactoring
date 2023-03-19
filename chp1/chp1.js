@@ -75,14 +75,14 @@ function amountFor(aPerformance, play) {
   return result;
 }
 
-function getPlay(aPerformance, oPlays) {
-  return oPlays[aPerformance.playID];
+function getPlay(aPerformance, jPlays) {
+  return jPlays[aPerformance.playID];
 }
 
-function volumeCreditsFor(aPerformance, oPlays) {
+function volumeCreditsFor(aPerformance, jPlays) {
   let result = 0;
   result += Math.max(aPerformance.audience - 30, 0);
-  if ("comedy" === getPlay(aPerformance, oPlays).type) {
+  if ("comedy" === getPlay(aPerformance, jPlays).type) {
     result += Math.floor(aPerformance.audience / 5);
   }
   return result;
